@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 /// A Calculator.
 class ShowLoaderDialog {
-  void show(BuildContext context) => showLoaderDialog(context);
-  void hide(BuildContext context) => Navigator.pop(context);
+  static show(BuildContext context) => showLoaderDialog(context);
+  static hide(BuildContext context) => Navigator.pop(context);
 }
 
 showLoaderDialog(BuildContext context) {
