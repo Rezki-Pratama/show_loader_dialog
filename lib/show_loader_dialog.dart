@@ -1,4 +1,4 @@
-library example_package;
+library show_loader_dialog;
 
 import 'package:flutter/material.dart';
 
