@@ -4,11 +4,16 @@ import 'package:flutter/material.dart';
 
 /// A Calculator.
 class ShowLoaderDialog {
-  static show(BuildContext context) => showLoaderDialog(context);
+  static show(BuildContext context,
+          {String title = "Loading...",
+          Color loadingColor = Colors.black,
+          Color titleColor = Colors.black}) =>
+      showLoaderDialog(context, title, loadingColor, titleColor);
   static hide(BuildContext context) => Navigator.pop(context);
 }
 
-showLoaderDialog(BuildContext context) {
+showLoaderDialog(
+    BuildContext context, String title, Color loadingColor, Color titleColor) {
   AlertDialog alert = AlertDialog(
     contentPadding: const EdgeInsets.all(10),
     shape: const RoundedRectangleBorder(
@@ -18,13 +23,10 @@ showLoaderDialog(BuildContext context) {
       child: Row(
         children: [
           CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(
-                  Theme.of(context).backgroundColor)),
+              valueColor: AlwaysStoppedAnimation<Color>(loadingColor)),
           const SizedBox(width: 15),
-          Text("Loading...",
-              style: TextStyle(
-                  color: Theme.of(context).backgroundColor,
-                  fontWeight: FontWeight.bold)),
+          Text(title,
+              style: TextStyle(color: titleColor, fontWeight: FontWeight.bold)),
         ],
       ),
     ),
