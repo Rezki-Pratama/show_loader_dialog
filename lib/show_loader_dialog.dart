@@ -2,7 +2,6 @@ library show_loader_dialog;
 
 import 'package:flutter/material.dart';
 
-/// A Calculator.
 class ShowLoaderDialog {
   static show(BuildContext context,
           {String title = "Loading...",
